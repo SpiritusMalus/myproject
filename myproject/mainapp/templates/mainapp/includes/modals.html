@@ -8,9 +8,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-                <form class="">
+                <form method="post">
+                    {% csrf_token %}
+<!--                    {{form.email}}-->
+<!--                    {{form.password1}}-->
+<!--                    {{form.password2}}-->
           <div class="form-floating mb-3">
-            <input type="email" class="form-control rounded-4" id="floatingInput" placeholder="name@example.com">
+            <input  type="email" class="form-control rounded-4" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">Email address</label>
           </div>
           <div class="form-floating mb-3">
@@ -50,7 +54,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-                <form class="">
+                <form method="post">
+                    {% csrf_token %}
           <div class="form-floating mb-3">
             <input type="email" class="form-control rounded-4" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">Email address</label>
