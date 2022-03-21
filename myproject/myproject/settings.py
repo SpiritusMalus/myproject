@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainapp',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,21 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "social_core.backends.github.GithubOAuth2",
+    "social_core.backends.google.GoogleOAuth2",
+)
+
+SOCIAL_AUTH_GITHUB_KEY = "3fceb5a570367fbb3e02"
+SOCIAL_AUTH_GITHUB_SECRET = "ed578ec9cf8c42fe72a95383acfa7f6a9b2e0f3f"
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '784759032089-hpv5epbvfm06ql78bq0r900sfi514ern.apps.googleusercontent.com' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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' # Google Consumer Secret
+
+LOGIN_URL = '/auth/login/google-oauth2/'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'

@@ -1,4 +1,4 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UserChangeForm
 from django import forms
 from django.contrib.auth.models import User
 
@@ -29,15 +29,5 @@ class MyUserCreationForm(UserCreationForm):
                                                       'placeholder': '******',
                                                       'for': 'floatingPassword'})
 
-#
-# class ="form-floating mb-3" >
-#
-# < input
-# type = "password"
-#
-#
-# class ="form-control rounded-4" id="floatingPassword" placeholder="Password" >
-#
-# < label
-# for ="floatingPassword" > Password < / label >
-# < / div >
+# class AuthUser(AuthenticationForm):
+
