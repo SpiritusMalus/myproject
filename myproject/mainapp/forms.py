@@ -12,3 +12,32 @@ class MyUserCreationForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['email', 'password1', 'password2']
+
+    def __init__(self, *args, **kwargs):
+        super(MyUserCreationForm, self).__init__(*args, **kwargs)
+        self.fields['email'].widget.attrs.update({'class': 'form-control rounded-4', 'type': 'email',
+                                                  'id': 'floatingInput',
+                                                  'placeholder': 'name@example.com',
+                                                  'for': 'floatingInput'})
+        self.fields['password1'].widget.attrs.update({'class': 'form-control rounded-4', 'type': 'email',
+                                                      'id': 'floatingPassword',
+                                                      'placeholder': '******',
+                                                      'for': 'floatingPassword',
+                                                      })
+        self.fields['password2'].widget.attrs.update({'class': 'form-control rounded-4', 'type': 'email',
+                                                      'id': 'floatingPassword',
+                                                      'placeholder': '******',
+                                                      'for': 'floatingPassword'})
+
+#
+# class ="form-floating mb-3" >
+#
+# < input
+# type = "password"
+#
+#
+# class ="form-control rounded-4" id="floatingPassword" placeholder="Password" >
+#
+# < label
+# for ="floatingPassword" > Password < / label >
+# < / div >
